@@ -12,8 +12,8 @@ public class GuessNumberTest {
     public void should_return_4A0B_when_comparewith_1234_given_1234(){
         //given
         GuessNumber guessNumber = new GuessNumber();
-        List<Integer> gameAnswer = Arrays.asList(1,2,3,4);
-        List<Integer> userAnswer = Arrays.asList(1,2,3,4);
+        List<String> gameAnswer = Arrays.asList("1","2","3","4");
+        List<String> userAnswer = Arrays.asList("1","2","3","4");
         //when
         String result = guessNumber.answer(gameAnswer,userAnswer);
         //then

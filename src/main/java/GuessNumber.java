@@ -3,11 +3,11 @@ import java.util.List;
 
 public class GuessNumber {
 
-    public String answer(List<Integer> gameAnswer, List<Integer> userAnswer) {
+    public String answer(List<String> gameAnswer, List<String> userAnswer) {
         int countA=0;
         int countB=0;
         int count=0;
-        for (int i : gameAnswer) {
+        for (String i : gameAnswer) {
             if(userAnswer.get(count)==i){
                 countA++;
             }else if (gameAnswer.contains(userAnswer.get(count))){
