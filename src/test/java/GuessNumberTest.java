@@ -23,7 +23,7 @@ public class GuessNumberTest {
         //given
         GuessNumber guessNumber = new GuessNumber("1 2 3 4");
         //when
-        String result = guessNumber.answer("1 2 3 4");
+        String result = guessNumber.answer("4 3 2 1");
         //then
         assertEquals("0A4B",result);
     }
