@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class GuessNumberTest {
 
     @Test
-    public void should_return_4A0B_given_1234(){
+    public void should_return_4A0B_when_comparewith_1234_given_1234(){
         //given
         GuessNumber guessNumber = new GuessNumber();
         List<Integer> gameAnswer = Arrays.asList(1,2,3,4);
