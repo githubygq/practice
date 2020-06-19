@@ -1,4 +1,4 @@
 public enum GameStatus {
-    FAILED, CONTINUED, SUCCEED
+    FAILED, CONTINUED, WRONGINPUT, SUCCEED
 
 }

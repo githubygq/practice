@@ -57,5 +57,28 @@ public class GuessNumberTest {
         assertEquals(GameStatus.FAILED,gameStatus);
     }
 
+    @Test
+    public void should_return_wronginput_when_get_status_after_input12_given_1234(){
+        //given
+        GuessNumber guessNumber = new GuessNumber("1 2 3 4");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(guessNumber);
+        //when
+        guessNumberGame.guess("1 2");
+        GameStatus gameStatus = guessNumberGame.getStatus();
+        //then
+        assertEquals(GameStatus.WRONGINPUT,gameStatus);
+    }
+
+    @Test
+    public void should_return_wronginput_when_get_status_after_input1123_given_1234(){
+        //given
+        GuessNumber guessNumber = new GuessNumber("1 2 3 4");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(guessNumber);
+        //when
+        guessNumberGame.guess("1 1 2 3");
+        GameStatus gameStatus = guessNumberGame.getStatus();
+        //then
+        assertEquals(GameStatus.WRONGINPUT,gameStatus);
+    }
 
 }

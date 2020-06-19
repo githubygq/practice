@@ -14,7 +14,9 @@ public class GuessNumberGame {
             gameStatus=GameStatus.SUCCEED;
         }else if (leftTryTimes==0){
             gameStatus=GameStatus.FAILED;
-        }else {
+        }else if ("0000".equals(result)){
+            gameStatus=GameStatus.WRONGINPUT;
+        }else{
             gameStatus=GameStatus.CONTINUED;
         }
         return result;
