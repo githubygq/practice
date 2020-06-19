@@ -3,6 +3,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
@@ -79,6 +80,31 @@ public class GuessNumberTest {
         GameStatus gameStatus = guessNumberGame.getStatus();
         //then
         assertEquals(GameStatus.WRONGINPUT,gameStatus);
+    }
+
+    @Test
+    public static void main(String[] args) {
+        //given
+        Scanner sc = new Scanner(System.in);
+        GuessNumber guessNumber = new GuessNumber("1 2 3 4");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(guessNumber);
+        String s;
+        //when
+        while (sc.hasNext()){
+            s=sc.nextLine();//输入数字按空格分开
+            guessNumberGame.guess(s);
+            GameStatus gameStatus = guessNumberGame.getStatus();
+            if(gameStatus.equals(GameStatus.SUCCEED)){
+                System.out.println("you win!");
+                break;
+            }else if(gameStatus.equals(GameStatus.FAILED)){
+                break;
+            }else if(gameStatus.equals(GameStatus.WRONGINPUT)){
+                System.out.println("WRONG INPUT");
+            }else {
+                System.out.println("CONTINUE!");
+            }
+        }
     }
 
 }
